@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attribute Selector</title>
+    <style type="text/css">
+        a[href]{
+            color: red;
+        }
+        a[href='https://www.daum.net']{
+            color: yellowgreen;
+        }
+        a[href$='kr']{
+            color:blue;
+        }
+        a[href^='mailto']{
+            color: blueviolet;
+        }
+        a[href*='sist']{
+            color:tomato;
+        }
+        a[href|='lemon']{
+            color: darkgreen;
+        }
+        a[href~='kimminho']{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>우리나라 검색엔진</h1>
+    <ul>
+        <li><a href="https://www.naver.com">Naver</a></li>
+        <li><a href="https://www.daum.net">Daum KaKao</a></li>
+        <li><a>Nate</a></li>
+        <li><a href="https://www.google.co.kr">Google Korea</a></li>
+        <li><a href="mailto:qhfhd963@yahoo.com">Yahoo Mail</a></li>
+        <li><a href="http://www.sist.co.kr">쌍용강북교육센터</a></li>
+        <li><a href="lemon-grape-apple-banana-pineapple">과일이름</a></li>
+        <li><a href="name : kimminho ">김민호</a></li>
+    </ul>
+</body>
+</html>

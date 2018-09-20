@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input tag 연습</title>
+</head>
+<body>
+    <h1>input tag</h1>
+    <form>
+        Name: <input type="text" required size="15" placeholder="이름을 입력해주세요."> <br>
+        Editor: <input list="editors">
+        <datalist id="editors">
+            <option>Eclipse</option>
+            <option>Visual Studio Code</option>
+            <option>Sublime Text</option>
+            <option>Editplus</option>
+            <option>WebStorm</option>
+            <option>Atom</option>
+        </datalist>
+        <br>
+        Age: <input type="number" min="20" max="60" required="required"
+        placeholder="필수" size="30"><br>
+        <input type="submit" value="전송">
+        <input type="reset" value="다시하기">
+    </form>
+</body>
+</html>
