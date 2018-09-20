@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo Selector</title>
+    <style type="text/css">
+        body{
+            background-color:navajowhite;
+        }
+        input:required{
+            background-color:lightsalmon;
+        }
+        input:read-only{
+            background-color:hotpink;
+        }
+        ul > li:first-child{
+            color:purple;
+        }
+        ul > li:nth-child(3){
+            color:mediumspringgreen;
+        }
+        ul > li:last-child{
+            color:orchid;
+        }
+    </style>
+</head>
+<body>
+    Name: <input type="text" required><br>
+    Age: <input type="number" value="32" readonly><br>
+    <ul>
+        <li>Java</li>
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>Spring</li>
+        <li>AngularJS</li>
+    </ul>
+</body>
+</html>
