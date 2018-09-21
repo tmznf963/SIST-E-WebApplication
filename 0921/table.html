@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table style</title>
+    <style type="text/css">
+        table,td,th{
+            /* border-width:5px;
+            border-style:solid;
+            border-color: chocolate; */
+            border: 2px solid purple;
+        }
+        table{
+            border-collapse: collapse;
+            width: 50%;
+            height: 150px;
+            caption-side: bottom;
+        }
+        caption{
+            font-size: 2em;
+        }
+        td{
+            padding:10px;
+            /* text-align: center; */
+            /* background-image: url('images/pin.jpg'); */
+        }
+        th{
+            background-color: navy;
+            color: navajowhite;
+        }
+        tbody > tr:nth-child(2) > td:nth-child(2){
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <caption>월별 매출액</caption>
+        <colgroup>
+            <col>
+            <col>
+            <col style="background-color: yellow;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>월</th>
+                <th>매출액</th>
+                <th>비고</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <th>합계</th>
+            <td colspan="2">220,000$</td>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>8</td><td>100,000$</td><td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>9</td><td>120,000$</td><td>20% 증가</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
