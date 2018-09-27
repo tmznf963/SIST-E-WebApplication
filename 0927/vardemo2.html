@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>변수 encode, decode</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script>
+	var str = "https://www.naver.com/keyword=자바";
+	document.write(
+		"encodeURI = " + encodeURI(str) + "<br>"
+		);
+	document.write(
+		"encodeURIComponent = " + encodeURIComponent(str) + "<br>"
+		);
+
+	var str1 = "https://www.naver.com/keyword=%EC%9E%90%EB%B0%94";
+	document.write(
+		"decodeURI = " + decodeURI(str) + "<br>"
+		);
+	var str2 = "https%3A%2F%2Fwww.naver.com%2Fkeyword%3D%EC%9E%90%EB%B0%94";
+	document.write(
+		"decodeURIComponent = " + decodeURIComponent(str) + "<br>"
+		);
+</script>
+</body>
+</html>

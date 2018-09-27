@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>변수</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	function print(obj) {
+		document.write(obj.name + ", " + obj['price'] +", "+obj.maker+"<br>");
+	}
+	var array = [];
+	var car = {name:"Sonata",price:250000,maker:"HUNDAI"};
+	var car1 = {name:"Matiz",price:150000,maker:"Daewoo"};
+	array.push(car); array.push(car1);
+
+	for(var i = 0 ; i < array.length ; i++){
+		print(array[i]);
+	}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>변수</title>
+	<meta charset="utf-8">
+	<script src="javascript/student.js"></script>
+</head>
+<body>
+	<output></output>
+	<script type="text/javascript">
+		var sum = student.kor + student.eng + student.mat + student.edp;
+		var avg = sum/4;
+		var grade = (avg <= 100 && avg >=90) ? 'A' :
+							(avg <90 && avg >= 80) ? 'B' :
+								(avg <80 && avg >= 70) ? 'C' :
+									(avg <70 && avg >= 60) ? 'D' : 'F';
+		var result = "<h1>9월 성적표</h1>"+
+		"<ul>"+
+			"<li>학번 :"+student.hakbun+"</li>"+
+			"<li>이름 :"+student.name+"</li>"+
+			"<li>국어 :"+student.kor+"</li>"+
+			"<li>영어 :"+student.eng+"</li>"+
+			"<li>수학 :"+student.mat+"</li>"+
+			"<li>전산 :"+student.edp+"</li>"+
+			"<li>총점 :"+sum+"</li>"+
+			"<li>평균 :"+avg+"</li>"+
+			"<li>평점 :"+grade+"</li>"+
+		"</ul>";
+		document.getElementsByTagName('output')[0].innerHTML = result;
+	</script>
+</body>
+</html>
