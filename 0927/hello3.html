@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript 사용방법</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="javascript/calc.js"></script>
+</head>
+<body>
+	<h1>계산기</h1>
+	<form>
+		<input type="number" name="first">
+		<select name = "operator">
+			<option value=".">--선택--</option>
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="x">x</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input type="number" name="second">
+		<button type="button" onclick="calc()">=</button>
+		<output name="result"></output>
+	</form>
+</body>
+</html>
