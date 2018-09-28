@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object Demo</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+		var square = {
+			width:50,  //property
+			height:100,
+			fgColor : 'yellow',
+			borderColor : '#f00',
+			position : [30, 70],
+			createDate : new Date(),
+			getArea : function(){   //method
+				return this.width * this.height;
+			}
+		};
+		document.write('전경색 = ' + square.fgColor + '<br />');
+		document.write('보더색 = ' + square['borderColor'] + '<br />');
+		document.write('생성날짜 = ' + square['createDate'] + '<br />');
+		document.write('면적 = ' + square.getArea() + '<br />');
+		square.position[0] = 100;
+		square.position[1] = 500;
+		document.write('위치 = (' + square['position'][0] + ', ' + square['position'][1] + ')<br />');
+		
+	</script>
+</body>
+</html>

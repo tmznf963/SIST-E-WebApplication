@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object Demo</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+		var str = "Hello, World";
+		document.write(typeof(str)+"<br>");
+
+		var str1 = new String("Hello, World");
+		document.write(typeof(str1)+"<br>");
+
+		var str2 = String("Hello, World");//형변환 함수
+		document.write(str2+" "+ typeof(str2)+"<br>");
+
+		var str3 = str1.valueOf(); //obj --> primitive type
+		document.write(typeof(str3)+"<br>");
+		
+		var str4 = new String(str3);//primitive type --> obj
+		document.write(typeof(str4)+"<br>")
+	</script>
+</body>
+</html>
