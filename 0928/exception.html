@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exception Demo</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var num = null;
+		num = parseInt(prompt('양의 정수를 입력해 주세요!'));
+		try{
+			if(num < 0){
+				throw new Error("반드시 양의 정수를 넣어야 합니다.");
+			}
+			document.write('num = ' + num + "<br>");
+		}catch(error){
+			document.write('Error발생' + "<br>");
+			document.write(error.message + "<br>");
+		}finally{
+			document.write("finally는 항상 수행");
+		}
+	</script>
+</body>
+</html>

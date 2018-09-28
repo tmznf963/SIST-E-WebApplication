@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Loop Demo</title>
+	<style type="text/css">
+		table{
+			width:900px;
+			margin-left:auto; margin-right:auto;
+			border-collapse: collapse;
+		}
+		th {
+			background-color: navy;  color:#fff;
+		}
+		td { text-align: center; }
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		document.write("<table border='1'><caption>구구단</caption>");
+		document.write("<thead><tr>");
+		for(var i = 2 ; i < 10 ; i++){
+			document.write('<th>' + i + '단</th>');
+		}
+		document.write("</tr></thead>");
+		document.write("<tbody><tr>");
+		for(i = 2 ; i < 10 ; i++){
+			document.write("<td>");
+				for(var j = 1 ; j < 10 ; j++){
+					document.write(i + ' x ' + j + ' = ' + i * j + "<br />");
+				}
+			document.write("</td>");
+		}
+		document.write('</tr></tbody>');
+		document.write('</table>');
+	</script>	
+</body>
+</html>

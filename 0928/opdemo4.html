@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Operator Demo</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	/*var su = -128;
+	document.write('su = ' + su.toString(2)+"<br>");
+	document.write('su >> 3 = ' + (su>>3).toString(2) +"<br>");
+	document.write('su >>> 3 = ' + (su>>>3).toString(2) + "<br>");
+	document.write("'3' == 3 --> "+("3"==3)+"<br>");//value
+	document.write("'3' === 3 --> "+("3"===3)+"<br><br>");//type
+
+	var n;//undefined
+	var n1 = null;//null
+	document.write("null == undefined --> " + (n == n1) + "<br>");
+	document.write("null === undefined --> " + (n === n1) + "<br><br>");
+
+	var car = {name:'Matiz',maker:'DaeWoo'};
+	document.write((name in car) +'<br>');
+	document.write(('name' in car) + '<br><br>');
+
+	var array = ['apple','mango','lemon','grape'];
+	document.write((0 in array) + '<br>');//0번째 방
+	document.write((4 in array) + '<br>');*/
+
+	var str = "Hello, World"; //string
+	var str1 = new String("Hello, World"); //obj
+	var array = ['apple','mango','lemon','grape']; //obj
+	var car = {name:'Matiz',maker:'DaeWoo'}; //obj
+
+	if(car instanceof Object) document.write('true'+"<br>");//instanceof == ~의 자식?
+	else document.write('false' + "<br>");
+
+	if(typeof(car) == 'object' && car instanceof Array) document.write('true' + '<br>');
+		else document.write('false' + '<br>');
+
+</script>
+</body>
+</html>
