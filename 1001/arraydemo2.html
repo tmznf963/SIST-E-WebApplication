@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Array Object Demo</title>
+	<script>
+		var Car = function(name,price,maker) {
+			this.name = name;
+			this.price = price;
+			this.maker = maker;
+			this.toString = function(){
+				document.write('<p>'+this.name+'('+this.price.toLocaleString()+')'+
+					this.maker+'</p>');
+			}
+		}
+	</script>
+</head>
+<body>
+	<script>
+		var array= new Array();
+		var sonata = new Car('sonata', 25000000,'Hyundai');
+		array.push(sonata);
+		array.push(new Car('Carnival',30000000,'KIA'));
+		array.push(new Car('Matiz',15000000,'DaeWoo'));
+		document.write(array);
+	</script>
+</body>
+</html>

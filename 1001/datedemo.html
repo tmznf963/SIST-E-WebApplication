@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Refresh" content="1"><!-- 1초마다 새로고침 -->
+	<title>Date object Demo</title>
+</head>
+<body>
+	<script>
+		/*var now = new Date('2018-12-25');
+		document.write(now);*/
+		//document.write(Date.parse('2018-10-01'));
+		//var now = new Date(date.toISOString());
+		//document.write(now.toISOString());
+		//document.write(now.toLocaleDateString());
+
+		/*var start = new Date();
+		var start = start.valueOf();
+		for(var i = 0 ; i < 10000000; i++){}
+		var end = new Date();
+		end = end.valueOf();
+		document.write((end-start) + 'ms');*/
+		var now = new Date();
+		var hour = now.getHours();
+		var minute = now.getMinutes();
+		var second = now.getSeconds();
+		var str = hour + " : " + minute + " : " + second;
+		document.write(str);
+
+	</script>
+</body>
+</html>
