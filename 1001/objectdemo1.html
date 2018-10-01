@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Object Literal Demo</title>
+	<script type="text/javascript">
+		var telephone = {
+			gibon:null, fee:null, tax:null, sum:null,
+			setGibon:function(obj) {
+				switch(obj.gubun) {
+				case 1 : this.gibon = 6000; break;
+				case 2 : this.gibon = 4800; break;
+				case 3 : this.gibon = 3000; break;
+			}},
+			setFee : function(obj) {this.fee = obj.amount * 12},
+			setTax : function(obj){this.tax= (this.gibon + this.fee) * 0.1},
+			setSum : function(obj){this.sum = this.gibon + this.fee + this.tax},
+			toString : function(obj){
+				document.write("<ul>");
+				for(var prop1 in obj){
+					document.write('<li>'+prop1+ ' --> '+obj[prop1]+'</li>')
+				}
+				for(var prop2 in this){
+					if(typeof(this[prop2]) != 'function'){
+						document.write("<li>"+ prop2 +" --> "+this[prop2] +"</li>")
+					}
+				}
+				document.write("</ul>");
+			}
+		};
+		var array = [
+							{gubun:2,tel:'422-5123',irum:'박은지',amount:1084},
+							{gubun:1,tel:'111-1111',irum:'정희자',amount:3824},
+							{gubun:3,tel:'333-3333',irum:'이영숙',amount:982}
+						];
+	</script>
+</head>
+<body>
+	<script>
+		for(var i = 0 ; i < array.length ; i++){	
+			telephone.setGibon(array[i]);
+			telephone.setFee(array[i]);
+			telephone.setTax(array[i]);
+			telephone.setSum(array[i]);
+			telephone.toString(array[i]);
+		}
+	</script>
+</body>
+</html>

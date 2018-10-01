@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Object Literal Demo</title>
+	<script type="text/javascript">
+		var telephone = {
+			gubun:null,
+			tel:null,
+			irum:null,
+			amount:null,
+			gibon:null,
+			fee:null,
+			tax:null,
+			sum:null,
+			setGibon:function() {
+				switch(this.gubun) {
+				case 1 : this.gibon = 6000; break;
+				case 2 : this.gibon = 4800; break;
+				case 3 : this.gibon = 3000; break;
+			}},
+			setFee : function() {this.fee = this.amount * 12},
+			setTax : function(){this.tax= (this.gibon+this.fee) * 0.1},
+			setSum : function(){this.sum = this.gibon + this.fee + this.tax},
+			toString : function(){
+				document.write("<ul>");
+				for(var i in this){
+					if(typeof(this[i]) != 'function'){
+						document.write("<li>"+ i +" --> "+this[i] +"</li>")
+					}
+				}
+				document.write("</ul>");
+			}
+		};
+	</script>
+</head>
+<body>
+	<script>
+		// 2 42205123 박은지 1084
+		telephone.gubun = 2;
+		telephone.tel = '422-0523';
+		telephone.irum = '박은지';
+		telephone.amount = 1084;
+		telephone.setGibon();
+		telephone.setFee();
+		telephone.setTax();
+		telephone.setSum();
+		telephone.toString();
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Object Constructor Demo</title>
+	<script>
+		var Car = function(name,price,maker){
+			this.name = name;//this == public , var == 캡슐화
+			this.price = price;
+			this.maker = maker;
+			this.toString = function(){
+				document.write('<ul>');
+				document.write('<li>이름: '+ this.name +'</li>');
+				document.write('<li>가격: '+ this.price.toLocaleString() +'</li>');
+				document.write('<li>제조사: '+ this.maker +'</li>');
+				document.write('</ul>');				
+			};
+		};
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		var sonata = new Car('sonata',24000000,'Hyundai');
+		document.write(sonata.name);
+		sonata.toString();
+	</script>
+</body>
+</html>

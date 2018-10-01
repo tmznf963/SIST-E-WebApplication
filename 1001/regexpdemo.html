@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Regexp Demo</title>
+</head>
+<body>
+	<!-- <script>
+		var str = "The rain SPAIN stays mainly in the plain";
+		var regexp = /ain/ig; //i == 대소문자 구분 안함, g == global
+		//document.write(str.match(regexp));
+		document.write(str.replace(regexp,'ed'));
+	</script> -->
+
+	Email: <input type="text" id="useremail">
+	<button type="button" onclick="check()">Check email</button>
+	<div>결과 : <output name="result"></output></div>
+	<script>
+		function check(){//email regexp
+			var emailregexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			
+			var useremail = document.getElementById('useremail').value;
+			alert(emailregexp.test(useremail));
+		};
+	</script>
+</body>
+</html>

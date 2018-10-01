@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>체질량 지수 구하기</title>
+	<style type="text/css">
+		ul > li {
+			list-style-type: none;
+		}
+		output { color:red; }
+	</style>
+	<script type="text/javascript">
+		var bmi = {
+			idex : null,
+			calcIndex : function(height, weight){
+				var value = weight / Math.pow(height, 2) * 10000;
+				this.idex = (value >= 40) ? '고도 비만' :
+											(value >= 35 && value < 40) ? '중등도 비만' :
+												(value >= 30 && value < 35) ? '경도 비만' : 
+													(value >= 25 && value < 30) ? '과체중' : 
+														(value >= 18.5 && value < 25) ? '정상' : '저체중';
+			}
+		}
+	</script>
+</head>
+<body>
+	<form name="myform">
+		<fieldset>
+			<legend>키와 몸무게의 값을 넣어주세요.</legend>
+			<ul>
+				<li>키 : <input type="text" name="height"></li>
+				<li>몸무게 :  <input type="text" name="weight"></li>
+				<li>BMI : <output name="result"></output></li>
+				<li><button type="button" onclick="mycalc()">계산하기</button></li>
+			</ul>
+		</fieldset>
+	</form>
+	<script type="text/javascript">
+		function mycalc(){
+			var f = document.myform;
+			var height = parseFloat(f.height.value);
+			var weight = parseFloat(f.weight.value);
+			bmi.calcIndex(height, weight);
+			f.result.innerHTML = bmi.idex;
+		}
+	</script>
+</body>
+</html>
