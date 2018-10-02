@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Closure Demo</title>
+	<script type="text/javascript">
+		function outer(whom){
+			//return whom + '! Good Morning';
+			function inner(message){
+				document.write(message+', Closure, '+whom+'<br>');
+			}
+			return inner;
+		}
+		var str = outer('jimin');//whom
+		str('Bongjur');//message
+
+		var mija = outer('mija');
+		mija('Sawadicap');
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

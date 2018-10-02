@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Function Demo</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var array = [
+			function(x,y){return x+y;},
+			function(x,y){return x-y;},
+			function(x,y){return x*y;},
+			function(x,y){return x/y;},
+		];
+		var x = 5;
+		var y = 10;
+		for(var i = 0 ; i < array.length ; i++){
+		document.write(array[i](x,y)+'<br>');	
+		}
+	</script>
+</body>
+</html>

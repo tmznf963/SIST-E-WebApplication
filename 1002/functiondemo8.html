@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Function Demo</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function test(a,b,c,d,e){
+			var sum = 0;
+			for (var i = 0 ; i< arguments.length ;i++){
+				sum += arguments[i];
+			}
+			return sum;
+			/*document.write('arguments 갯수 : '+arguments.length + '<br>');
+			if(!a)a = 0;
+			if(!b)b = 0;
+			if(!c)c = 0;
+			if(!d)d = 0;
+			if(!e)e = 0;
+			return a+b+c+d+e;*/
+		}//arguments object
+		document.write(test(1,2,3)+'<br>');
+		document.write(test(1,2,3,4)+'<br>');
+		document.write(test(1,2,3,4,5)+'<br>');
+	</script>
+</body>
+</html>
