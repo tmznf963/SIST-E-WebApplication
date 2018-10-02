@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Function Literal Demo</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var su = 5; //number literal
+		var str = 'hello' //String literal
+		var flag = 4>5; //boolean literal
+		var car = {name:'sonata',price:20400000,maker:'Hyundai'};//object literal
+		var array = ['Mango','apple','Banan']; //array literal
+		var myfunc = function(){
+			document.write("My role is a function literal<br>");
+		}//function literal;
+		myfunc();
+		su = myfunc;
+		str = myfunc;
+		flag = myfunc;
+		car = myfunc;
+		array = myfunc;
+		document.write(typeof(su));
+	</script>
+</body>
+</html>

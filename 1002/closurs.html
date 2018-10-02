@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Closurs Demo(클로저)</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function outer(message){
+			function greeting(towhom){document.write(towhom + ' ' +message);}//function literal
+			return greeting;
+		}
+		
+		var jimin = outer('good morning');
+		jimin('jimin');
+		
+		var mija = outer('good evening');
+		mija('이미자!');
+			
+
+			//return 'hello, world'; //string literal
+			//return 100;			//number literal
+			//return true;			//boolean literal
+			//return {name:'sonata',price:25000000,maker:'Hyundai'};//object literal
+			//return ['apple','mango','grape'];//array literal
+		//document.write(str[0]);
+		//document.write(str.name+str['price']+str.maker);
+	</script>
+</body>
+</html>

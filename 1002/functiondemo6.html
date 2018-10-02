@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CallBack Function Demo</title>
+	<script type="text/javascript">
+		window.onload = setup;
+
+		function setup(){
+			document.getElementById('clickme').onclick = clickme;
+		}
+		
+		function clickme(){
+				document.body.style.backgroundColor='skyblue';
+		}
+	</script>
+</head>
+<body>
+	<button type="button" id='clickme'>Click Me!</button>
+</body>
+</html>

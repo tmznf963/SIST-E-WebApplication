@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Function Demo</title>
+	<script type="text/javascript">
+		function calcSum(start,end) {
+			var i , sum = 0;
+			for(i = start ; i <end ; i++){
+				sum += i;
+			}
+			//document.write(start+'~'+end+'까지의 합 : ' + sum);
+			return sum;
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		//calcSum(); //CallByName
+		//calcSum(50,80); //CallByValue
+		var start = 50,end = 80;
+		var result = calcSum(start,end);
+		document.write(start+'~'+end+'까지의 합 : '+result);
+	</script>
+</body>
+</html>

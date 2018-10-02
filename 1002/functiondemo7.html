@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Nested Function Demo (중첩함수)</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function outer(){
+			var su = 5;	//지역변수는 var
+			function inner(){
+				var str = 'hello';
+				document.write('su = ' + su);
+			}
+			inner();
+		};
+		outer();
+	</script>
+</body>
+</html>
