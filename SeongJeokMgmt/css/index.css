@@ -1,0 +1,15 @@
+h1{
+	text-align: center;
+	text-decoration-line: underline;
+}
+table{
+	margin-right: auto;
+	margin-left: auto;
+	border-style: solid;
+	border-collapse: collapse;
+}
+th{
+	font-weight: 900;
+	color:#fff;
+	background-color:skyblue;
+}

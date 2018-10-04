@@ -1,0 +1,13 @@
+h1{
+	text-align: center;
+}
+table {
+	border-collapse: collapse;
+	width:900px;
+	margin-left:auto;
+	margin-right:auto;
+	border-style:dotted;
+}
+th{
+	background-color: navy;  color:#fff;
+}
