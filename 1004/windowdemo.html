@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>window object Demo</title>
+	<script type="text/javascript">
+		var w = null;//전역변수
+		window.onload = function(){
+			var ps = document.getElementsByTagName('p');
+			for(var i = 0 ; i < ps.length-1 ; i++){
+				ps[i].onclick = myopen;
+			}
+			ps[2].onclick = myclose;
+		}
+		function myopen(evt){
+			//window.alert('(x,y) = '+evt.screenX+','+evt.screenY);
+			var urlN = 'https://www.naver.com';
+			var urlG = 'https://www.google.co.kr';
+			var feature = 'width=400,height=400,left=0,top=0';
+			switch(evt.target.innerHTML){
+				case '네이버' : w = window.open(urlN,'_blank',feature); break;
+				case '구글' : w = window.open(urlG,'_blank',feature); break;
+			}
+			//var w = window.open(url,'_blank','width=400,height=400,left=550,top=300'); //새창
+			//window.open(url,'_self','width=400,height=400,left=550,top=300'); //자기창
+			//window.open(url,'');
+		}
+		function myclose(){
+			//w.close();
+			w.moveBy(250,250);
+			window.setTimeout(myclose,1000);
+		}
+	</script>
+</head>
+<body>
+	<h1>검색엔진</h1>
+	<p>네이버</p>
+	<p>구글</p>
+	<p>[ 닫기 x ]</p>
+</body>
+</html>
