@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Event Demo</title>
+	<style type="text/css">
+		body{
+			background-color:purple;
+		}
+		div{
+			width: 500px; height:500px;
+			background-color:orange;
+		}
+		button{
+			width:200px; height: 200px;
+			background-color:skyblue;
+		}
+	</style>
+	<script type="text/javascript">
+		window.addEventListener('load',setup,false);
+		function setup(){
+			document.getElementsByTagName('body')[0].addEventListener('click',myclick,true);//true --> 위에서 아래로
+			document.getElementsByTagName('div')[0].addEventListener('click',myclick,true);//false --> 아래에서 위로
+			document.getElementsByTagName('button')[0].addEventListener('click',myclick,true);//전파방향
+		}
+		function myclick(){
+			alert(this.tagName);
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<button type="button">Click Me!!</button>
+	</div>	
+</body>
+</html>

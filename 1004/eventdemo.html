@@ -8,22 +8,39 @@
 		window.addEventListener('load', setup, false);
 		function setup(){
 			document.getElementById('btnAdd').addEventListener('click', add, false);
-			//document.getElementById('btnRemove').addEventListener('click', remove, false);
-			//document.getElementById('txtAdd').addEventListener('keydown', add, false);
+			document.getElementById('btnRemove').addEventListener('click', remove, false);
+			document.getElementById('txtAdd').addEventListener('keydown', preadd, false);
 			//document.getElementById('txtRemove').addEventListener('keydown', remove, false);
 			document.getElementById('cart').addEventListener('change', myselect, false);
 		}
 		function myselect(){
-			alert('aaa');
 			var idx = document.getElementById('cart').selectedIndex;
+			if(idx != 0){
 			document.getElementById('txtRemove').value = 
 				document.getElementById('cart').options[idx].text;
+			}
+		}
+		function preadd(){
+			if(document.getElementById('txtAdd').value && event.keyCode==13){
+				add();
+			}
 		}
 		function add(){
-			var item = document.getElementById('txtAdd').value;
-			var option = document.createElement('option');   //<option></option>
-			option.text = item;       //<option>신라면</option>
-			document.getElementById('cart').add(option);
+			if(document.getElementById('txtAdd').value){
+				var item = document.getElementById('txtAdd').value;
+				var option = document.createElement('option');   //<option></option>
+				option.text = item;       //<option>신라면</option>
+				document.getElementById('cart').add(option);
+				document.getElementById('txtAdd').value="";
+			}
+		}
+		function remove(){
+			if(document.getElementById('txtRemove').value)//문자열이 있으면 true
+			{
+				var idx = document.getElementById('cart').selectedIndex;
+				document.getElementById('cart').remove(idx);
+				document.getElementById('txtRemove').value="";
+			}
 		}
 	</script>
 </head>

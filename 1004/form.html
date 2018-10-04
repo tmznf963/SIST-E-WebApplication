@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Form Event Demo</title>
+	<script type="text/javascript">
+		window.addEventListener('load',setup,false);
+		function setup(){
+			//document.forms[0].result.innerHTML = 'Hello, World'; //index 접근
+			//document.myform.result.innerHTML='Hello, myform'; //name 접근
+			//document.getElementById('myform').result.innerHTML ='Hello, id=myform';//id 접근
+			//document.getElementById('myform').addEventListener('submit',mysubmit,false);		
+			document.myform.mybutton.addEventListener('click',mysubmit,false);
+		}
+			function mysubmit(){
+				var f = document.myform;
+				f.action='result.html';
+				f.method='get';
+				if(!f.username.value || !f.userage.value){
+					alert('이름 혹은 나이의 값이 빠졌습니다.');
+					return false;
+				}
+				f.submit();
+			}
+	</script>
+</head>
+<body>
+	<form name = 'myform'>
+		Name : <input type="text" name="username" required placeholder="이름을 넣어주세요."><br>
+		Age : <input type="text" name="userage" required placeholder="나이를 넣어주세요."><br>
+		<input type="button" name="mybutton"value="전송하기">&nbsp;&nbsp;
+		<input type="reset" value="다시하기">
+	</form>	
+</body>
+</html>

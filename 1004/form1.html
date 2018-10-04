@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Select Demo</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			document.myform.search_engine.onchange = mychange;
+		}
+		function mychange(){
+			var idx = this.selectedIndex;
+			if(idx != 0){
+				window.location.href = this.options[idx].value;
+			}
+		}
+	</script>
+</head>
+<body>
+	<form name='myform'>
+		<select name='search_engine'>검색엔진을 선택해 주세요.
+			<option>--선택--</option>
+			<option value='https://www.naver.com'>네이버</option>
+			<option value='https://www.daum.net'>다음카카오</option>
+			<option value='https://www.nate.com'>네이트</option>
+			<option value='https://www.google.co.kr'>구글코리아</option>
+		</select>
+	</form>	
+</body>
+</html>
