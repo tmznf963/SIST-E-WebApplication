@@ -1,0 +1,18 @@
+thead > tr > th {
+   background-color: blue;
+   color:white;
+}
+
+tbody > tr > td {
+   background-color: yellow;
+}
+
+table {
+   margin: auto; 
+   margin-left: auto;
+}
+
+h1 {
+   text-align: center;
+   text-decoration: underline;
+}

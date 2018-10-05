@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>DOM Demo</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			document.images[0].onmouseover = function(){
+				this.setAttribute('src', 'images/jimin.jpg');
+				this.setAttribute('width', '300px');
+				this.setAttribute('height', '300px');
+			}
+			document.images[0].onmouseout = function(){
+				this.setAttribute('src', 'images/hyekyo.jpg');
+				this.setAttribute('width', '300px');
+				this.setAttribute('height', '300px');
+			}
+		}
+	</script>
+</head>
+<body>
+	<img src='images/hyekyo.jpg' width='300' height='300' />	
+</body>
+</html>

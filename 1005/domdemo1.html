@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>DOM Demo</title>
+	<script>
+		window.onload = function(){
+			var console = document.getElementById('console');
+			//console.innerHTML = document.querySelector('#habit').childNodes.length;
+			//console.innerHTML = document.querySelector('#habit').childNodes[0].nodeType;
+			//console.innerHTML = document.querySelector('#habit').childNodes[5].tagName;
+			//var li3 = console.innerHTML = document.querySelector('#habit').childNodes[5];
+			//console.innerHTML = li3.childNodes[0].textContent;
+			var li4 = document.querySelectorAll('li')[2].nextSibling.nextSibling;
+			console.innerHTML = li4.childNodes[0].textContent;
+		}
+	</script>
+</head>
+<body>
+	<h1>성공하는 사람들의 7가지 습관</h1>
+	<ol id='habit'>
+		<li>습관1. 자신의 삶을 주도하라.</li>
+		<li>습관2. 끝을 생각하며 시작하라.</li>
+		<li>습관3. 소중한 것을 먼저하라.</li>
+		<li>습관4. 윈-윈을 생각하라.</li>
+		<li>습관5. 먼저 이해하고 다음에 이해시켜라.</li>
+		<li>습관6. 시너지를 내라.</li>
+		<li>습관7. 끊임없이 쇄신하라.</li>
+	</ol>
+	<p id='console'></p>
+</body>
+</html>

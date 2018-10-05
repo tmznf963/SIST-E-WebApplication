@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>사원관리프로그램</title>
+   <script src="script/emp.js"></script>
+   <script src="script/main.js"></script>
+  <script src="script/input.js"></script>
+   <script src="script/calc.js"></script>
+   <script src="script/output.js"></script>
+   <script src="script/sort.js"></script>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <h1>사원관리프로그램</h1>
+   <form name='myform'>
+      <table border="1">
+         <tbody>
+            <tr>
+               <th><label for="txtNum">사번:</label></th><td><input type="text" name="txtNum" id="txtNum"><label>*</label></td>
+            </tr>
+            <tr>
+               <th><label for="txtName">이름:</label></th><td><input type="text" name="txtName" id="txtName"><label>*</label></td>
+            </tr>
+            <tr>
+               <th><label for="txtGibon">기본급:</label></th><td><input type="text" name="txtGibon" id="txtGibon"><label>*</label></td>
+            </tr>
+            <tr>
+               <th><label for="txtNighttime">야간수당:</label></th><td><input type="text" name="txtNighttime" id="txtNighttime"><label>*</label></td>
+            </tr>
+            <tr>
+               <th><label for="txtFam">가족수:</label></th><td><input type="text" name="txtFam" id="txtFam"><label>*</label></td>
+            </tr>
+         </tbody>
+      </table>
+      <br />
+      <div>
+      <input type="button" id="btnAdd" value="입력하기">
+      <input type="button" id="btnCalc" value="계산하기">
+      <input type="button" id="btnSort" value="정렬하기">
+      <input type="button" id="btnOutput" value="결과보기">
+      </div>
+   </form>
+</body>
+</html>

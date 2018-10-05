@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>DOM Demo</title>
+	<script>
+		window.onload = function(){
+			var np = document.createElement('p');//<p></p>
+			var newText = document.createTextNode('이것은 JavaScript에서 생성한 단락입니다.');
+			np.appendChild(newText);
+			document.getElementsByTagName('body')[0].appendChild(np);
+		}
+	</script>
+</head>
+<body>
+	<h2>나는 헤드라인 태그</h2>	
+</body>
+</html>
