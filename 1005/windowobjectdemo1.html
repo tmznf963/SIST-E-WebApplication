@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>window object Demo</title>
+	<script>
+		window.addEventListener('load', init);
+		function init(){
+			//document.getElementById('btnOpen').addEventListener('click', myopen);
+			document.getElementByTagName('body')[0].addEventListener('click', myopen);
+		}
+		function myopen(evt){
+			var w = window.open('register.html', '_blank', 'width=400, height=600');
+			w.moveTo(evt.screenX,evt.screenY);
+			//w.document.body.style.backgroundColor="cyan";
+		}
+	</script>
+</head>
+<body>
+	<div><button type="button" id="btnOpen">Open</button></div>
+	<output id="result"></output>
+</body>
+</html>

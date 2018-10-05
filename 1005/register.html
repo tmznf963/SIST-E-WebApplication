@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>회원가입창</title>
+	<script>
+		window.addEventListener('load', init);
+		var f = null;
+		function init(){
+			f = document.myform;
+			f.btnRegister.addEventListener('click', register);
+		}
+		function register(){
+			var username = f.username.value;
+			var userage = f.userage.value;
+			var useraddress = f.useraddress.value;
+			var useremail = f.useremail.value;
+			var str = '<h1>회원정보</h1><ul style="list-style-type:disc">';
+			str += '<li>회원이름 : ' + username + '</li>' +
+							'<li>회원나이 : ' + userage + '</li>' +
+							'<li>회원주소 : ' + useraddress + '</li>' +
+							'<li>회원메일주소 : ' + useremail + '</li></ul>';
+			opener.document.getElementById('result').innerHTML = str;
+			self.close();
+		}
+	</script>
+</head>
+<body>
+	<h1>회원정보를 입력해 주세요.</h1>
+	<form name='myform'>
+		<ul style="list-style-type: none">
+			<li>이름 : <input type="text" name="username" size="10"></li>
+			<li>나이 : <input type="text" name="userage" size="5"></li>
+			<li>주소 : <input type="text" name="useraddress"></li>
+			<li>Email : <input type="text" name="useremail"></li>
+			<li><button type="button" name='btnRegister'>회원가입하기</button></li>
+		</ul>	
+	</form>
+</body>
+</html>

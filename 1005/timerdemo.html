@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Digital Watch [Timer Demo]</title>
+	<script>
+		window.onload = init;
+		function init(){
+			document.getElementById('start').addEventListener('click',start,false);
+			document.getElementById('stop').addEventListener('click',stop,false);
+			var now = new Date();
+			document.getElementById('myclock').innerHTML = now.toLocaleString();
+		}
+		var mytimer = null
+		function start(){
+			var now = new Date();
+			document.getElementById('myclock').innerHTML = now.toLocaleString();
+			mytimer = window.setTimeout(start,1000);
+		}
+		function stop(){
+			window.clearTimeout(mytimer);
+		}
+	</script>
+</head>
+<body>
+	<output id="myclock"></output><br>
+	<button type="button" id="start">스타트</button>
+	<button type="button" id="stop">스탑</button>
+</body>
+</html>

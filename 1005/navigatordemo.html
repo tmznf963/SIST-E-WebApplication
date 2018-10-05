@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Navigator Object Demo</title>
+	<script>
+		window.onload = function(){
+			document.write('<ul>');
+			for(var property in window.navigator){
+				if(typeof(navigator[property]) != 'function'){
+					if(typeof(navigator[property]) == 'object'&& navigator[property] instanceof(Array)){
+						document.write('<li>'+property+' : ' + navigator[property].join(',') +'</li>');
+					}else if(typeof(navigator[property]) == 'object'&& navigator[property] instanceof(Object)){
+						document.write('<li>'+property+' : ' + '객체' +'</li>');
+					}else{
+						document.write('<li>'+property+' : ' + navigator[property] +'</li>')
+					}
+				}
+			}
+			document.write('</ul>');
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
