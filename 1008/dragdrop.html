@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Drag and Drop Demo</title>
+	<script type="text/javascript">
+		window.addEventListener('load', function(){
+			var img = document.getElementById('myimage');
+			img.addEventListener('dragstart', function(evt){
+				evt.dataTransfer.setData('mydrag', evt.target.id);
+			},false);
+			var mydiv = document.getElementById('mydiv');
+			mydiv.addEventListener('dragover', function(evt){
+				evt.preventDefault();
+			});
+			mydiv.addEventListener('drop', function(evt){
+				evt.preventDefault();
+				var myid = evt.dataTransfer.getData('mydrag');
+				var element = document.getElementById(myid);   //image Id
+				element.parentNode.removeChild(element); //body가 image를 지움
+				evt.target.appendChild(element); //div가 image를 자식으로
+			});
+		}, false);
+	</script>
+	<style type="text/css">
+		div{
+			width:250px;  height:250px;
+			padding:10px;  border:1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<h1>Drag and Drop Demo</h1>
+	<div id="mydiv"></div>	
+	<br /><br />
+	<img src="images/check.png" draggable="true" width="200" height="200" id='myimage'>
+</body>
+</html>
