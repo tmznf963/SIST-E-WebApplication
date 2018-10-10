@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html manifest="hello.manifest">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script>
+		window.addEventListener('load', init, false);
+		function init(){
+			window.applicationCache.update();
+			//10초마다 update
+			setTimeout(init, 5000);
+		}
+		window.applicationCache.addEventListener('updateready', function(){
+			switch(applicationCache.status){
+				case applicationCache.UNCACHED : console.log('uncaced status'); break;
+				case applicationCache.IDLE : console.log('idle status'); break;
+				case applicationCache.CHECKING : console.log('checking status'); break;
+				case applicationCache.DOWNLOADING : console.log('downloading status'); break;
+				case applicationCache.UPDATEREADY : 
+					if(confirm("Update하실 수 있습니다. 정말 Update 하시겠습니까? ")){
+						applicationCache.swapCache();//user는 사실상 알지 못함.
+						location.reload();
+					}
+				case applicationCache.OBSOLETE : console.log('obsolete status'); break;
+			}
+		} ,false);
+	</script>
+</head>
+<body>
+	<h1>Hello, Application Cache</h1>
+</body>
+</html>

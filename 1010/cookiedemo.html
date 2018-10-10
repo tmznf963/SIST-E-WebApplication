@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cookie Demo</title>
+	<script>
+		window.addEventListener('load', init, false);
+		function init(){
+			if(!navigator.cookieEnabled){
+				alert('현재 브라우저는 Cookie를 지원하지 않습니다.');
+				return;
+			}
+			var mycount = getCookie('mycount');
+			console.log("mycount = " + mycount);
+			if(mycount){
+				var newValue = parseInt(mycount);
+				newValue++;
+				document.getElementById("count").innerHTML = String(newValue);
+				setCookie("mycount", String(newValue));
+			}else{  //cookie를 만든적이 없다면
+				alert("No Cookie~~");
+				setCookie("mycount", "0");
+			}
+		}
+		function getCookie(key){
+			var mycookie = document.cookie;   //mycount=1;expires=...
+			var idx = mycookie.indexOf('=');
+			if(idx > 0 ){ //cookie가 있다면
+				var value = mycookie.substring(idx + 1, mycookie.indexOf(';'));
+				return value;
+			}else{   //cookie가 없다면
+				return null;
+			}
+		}
+		function setCookie(key, value){
+			var newDate = new Date(2018, 9, 11, 23, 0, 0);   //10월 11일 오후 14시까지
+			document.cookie = key + '=' + encodeURI(value) + ';expires=' + newDate.toUTCString() + ';path=/1010/';
+		}
+	</script>
+</head>
+<body>
+	방문자 수 : <span id='count'></span>
+</body>
+</html>

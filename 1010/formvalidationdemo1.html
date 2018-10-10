@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Form Validation Demo</title>
-	<script>
-		function checkEmail(){
-			var email = this.useremail;
-			email.addEventListener('input',function(){
-				if(email.validity.typeMismatch()){
-					email.setCustomValidity("Email 형식이 맞지 않습니다.");
-					return false;
-				}else{
-					email.setCustomValidity("");
-					return true;
-				}
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>form validation demo</title>
+		<script>
+			window.addEventListener('load', function(){
+				var email = document.getElementById("mail");
+				email.addEventListener('input', function(){
+					if (email.validity.typeMismatch) {
+						email.setCustomValidity("Email 형식이 맞지 않습니다.");  return false;
+					} else {
+						email.setCustomValidity("");   return true;
+					}
+				},false);
 			},false);
-		}
-	</script>
-</head>
-<body>
-	<form name='myform' onsubmit="checkEmail()">
-		Email : <input type="email" name="useremail"><br />
-		<input type="submit" value="Send">
-	</form>	
-</body>
+		</script>
+	</head>
+	<body>
+		<form>
+		  Email : 
+		  <input type="email" id="mail" name="mail" required>
+		  <button>Submit</button>
+		</form>
+	</body>
 </html>

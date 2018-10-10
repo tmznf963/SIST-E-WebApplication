@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Web Form Demo</title>
+	<script type="text/javascript">
+		window.addEventListener('load',function(){
+			var message = document.myform.mytextarea;
+			document.myform.addEventListener('input',function(){
+				document.myform.btnSend.disabled = message.value.length <= 0 || message.value.length > 140;
+				document.myform.result.value = 140 - message.value.length;
+			},false);
+		},false);
+	</script>
+</head>
+<body>
+	<h3>140자 이내로 입력해 주세요.</h3>
+	<form name='myform'>
+		<output name="result">140</output>자 남음<br>
+		<textarea name="mytextarea" cols="40" rows="5"></textarea><br>
+		<button type="submit" name="btnSend" disabled="disabled">Send</button>
+	</form>
+</body>
+</html>
