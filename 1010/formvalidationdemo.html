@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Form Validation Demo</title>
+	<style type="text/css">
+		input:invalid{
+			border : 2px dashed red;
+		}
+		input:valid{
+			border : 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<form name='myform'>
+		Favorite Fruit : <input type="text" name="fruit" required minlength="6" maxlength="6" pattern="banana|cherry"><br />
+		Age : <input type="number" name="age" required min="20" max="29" ><br />
+		<button type="submit">Send</button>
+	</form>
+</body>
+</html>

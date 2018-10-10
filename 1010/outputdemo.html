@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Output Demo</title>
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<form name='myform' oninput="result.value=myrange.valueAsNumber+parseInt(mynumber.value)">
+		<input type="range" name="myrange" value="22" min="0" max="100">+
+		<input type="number" name="mynumber" value="50" min="0" max="100">=
+		<output id="result" for="myrange mynumber"></output>
+	</form>
+</body>
+</html>

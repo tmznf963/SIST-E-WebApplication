@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>multiple 속성 Demo</title>
+	<script type="text/javascript">
+		window.addEventListener('load',function(){
+			document.myform.addEventListener('submit', function(evt){
+				evt.preventDefault();
+				document.querySelector('#result').innerHTML = document.myform.txtTo.value;
+			},false);
+		},false);
+	</script>	
+</head>
+<body>
+	<form name='myform'>
+		From : <input type="text" name="txtFrom" multiple list='mylist'><br />
+		To : <input type="email" name="txtTo" size='50' multiple='multiple' list='mylist'>
+		<datalist id='mylist'>
+			<option value="aaa@aaa.com">aaa@aaa.com</option>
+			<option value="bbb@bbb.com">bbb@bbb.com</option>
+			<option value="ccc@ccc.com">ccc@ccc.com</option>
+			<option value="ddd@ddd.com">ddd@ddd.com</option>
+			<option value="eee@eee.com">eee@eee.com</option>
+			<option value="fff@fff.com">fff@fff.com</option>
+		</datalist><br />
+		Attachment File : <input type="file" name="attachfile" multiple="multiple" accept="image/*, audio/*, video/*"><br />
+		<input type="submit" value="Send">
+	</form>	
+	<output id='result'></output>
+</body>
+</html>

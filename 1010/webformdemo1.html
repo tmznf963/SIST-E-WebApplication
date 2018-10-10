@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Web Form Demo</title>
+	<script type="text/javascript">
+		window.addEventListener('load',function(){
+			document.myform.addEventListener('submit', function(evt){
+				evt.preventDefault();
+				document.querySelector('#result').innerHTML = document.myform.mycolor.value;
+			},false);
+		},false);
+	</script>
+</head>
+<body>
+	<form name='myform'>
+		Color : <input type="color" name="mycolor"><br />
+		<input type="submit" value="Send">
+	</form>	
+	<output id="result"></output>
+</body>
+</html>

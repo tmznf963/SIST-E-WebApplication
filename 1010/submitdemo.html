@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Submit Demo</title>
+</head>
+<body>
+	<!-- 
+	HTML5의 submit
+	formmethod , formaction, formenctype 속성 추가
+	 -->
+	<form>
+		Name : <input type="text" name="username" required="required"><br>
+		Age : <input type="text" name="userage" required="required"><br>
+		<input type="submit" value="가입하기" formaction="/1010/register.html" formmethod="POST">
+		<input type="submit" value="수정하기" formaction="/1010/update.html" formmethod="GET">
+	</form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Web Form Demo</title>
+	<script type="text/javascript">
+		window.addEventListener('load',init,false);
+		function init(){
+			document.myform.addEventListener('submit',function(evt){
+				evt.preventDefault();
+				document.querySelector('#result').innerHTML = document.myform.birthdate.value;
+				document.querySelector('#result').innerHTML = document.myform.datetime.value;
+				document.querySelector('#result').innerHTML = document.myform.datemonth.value;
+
+			},false);
+		}
+	</script>
+</head>
+<body>
+	<form name='myform'>
+		Your Birth Date : <input type="date" name="birthdate" min="1950-01-01" max="2020-12-31"><br>
+		Date, Time : <input type="datetime" name="datetime"><br>
+		Month : <input type="month" name="datemonth" min="2010-01" max="2020-12"><br>
+		<input type="submit" name="Send">
+	</form>
+	<output id="result"></output>
+</body>
+</html>
