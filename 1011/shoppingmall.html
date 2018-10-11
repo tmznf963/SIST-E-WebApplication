@@ -4,50 +4,112 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Shopping Mall with Storage</title>
+	<script>
+		window.addEventListener('load', setup,false);
+		var storage = null;
+		function setup(){
+			storage = window.localStorage;
+			var name = document.querySelector('#txtName');
+			var price = document.querySelector('#txtPrice');
+			var maker = document.querySelector('#txtMaker');
+			var amount = document.querySelector('#txtAmount');
+			var cart = document.querySelector('#cart');
+			var result = document.querySelector('#result');
+			document.querySelector('#btnSave').addEventListener('click', function(){
+				var product = {
+					name: name.value,
+					price: parseInt(price.value),
+					maker : maker.value,
+					amount : parseInt(amount.value) 
+				};
+				var productStr = JSON.stringify(product);
+				storage.setItem(name.value, productStr);
+				result.innerHTML = '카트에 담기 성공 : ' + productStr;
+				name.value = '';   price.value = '';  maker.value = '';  amount.value = '';
+				updateCart();
+			}, false);
+			document.querySelector('#btnSelect').addEventListener('click', function(){
+				var productStr = storage.getItem(cart.value);
+				if(productStr){
+					var product = JSON.parse(productStr);
+					name.value = product.name;     price.value = product['price'];
+					maker.value = product.maker;   amount.value = product.amount;
+				}else{
+					result.innerHTML = 'Product Not Found';
+				}
+			});
+			document.querySelector('#btnSelectAll').addEventListener('click', function(){
+				var str = '<h3>카트목록</h3><ol>';
+				for(var i = 0 ;i < storage.length ; i++){
+					var key = storage.key(i);
+					var value = storage[key];
+					str += '<li>' + value + '</li>';
+				}
+				str += '</ol>';
+				document.querySelector('#result').innerHTML = str;
+			},false);
+			document.querySelector('#btnDelete').addEventListener('click', function(){
+				storage.removeItem(cart.value);
+				updateCart();
+			},false);
+			document.querySelector('#btnDeleteAll').addEventListener('click', function(){
+				storage.clear();
+				updateCart();
+			},false);
+			updateCart();
+		}
+		function updateCart(){
+			var str ='<option>--목록--</option>';
+			for(var i = 0 ; i < storage.length ; i++){
+				str += '<option>' + storage.key(i) + '</option>';
+			}
+			document.getElementById('cart').innerHTML = str;
+		}
+	</script>
 	<style type="text/css">
 		div {
-			width: 70%;
-			margin-left: auto;
-			margin-right: auto;
+			width : 80%;
+			margin-left:auto; margin-right:auto;
 		}
 		ul > li {
-			list-style-type:none;
-			display: inline;
-			float:left;
-			padding:10px;
+			list-style-type: none;
+			display:inline;
+			float : left;
+			margin : 10px;
 		}
-		#txtPirce,#txtAmount{width:80px;}
-		#cart{width: 200px;}
+		#txtPrice, #txtAmount { width:100px; }
+		#cart { width:300px; }
+		h1 { text-align: center }
 	</style>
 </head>
 <body>
+	<h1>쌍용 홈 쇼핑</h1>
 	<div>
 		<fieldset>
 			<legend>상품 정보</legend>
 			<ul>
             <li><label for="txtName">상품명 : </label>
-            <input type="text" id="txtName" value="" placeholder=""></li>
-            <li><label for="txtPirce">가격 : </label>
-            <input type="text" id="txtPirce" value="" placeholder=""></li>
+            <input type="text" id="txtName"></li>
+            <li><label for="txtPrice">가격 : </label>
+            <input type="text" id="txtPrice"></li>
             <li><label for="txtMaker">제조사 : </label>
-            <input type="text" id="txtMaker" value="" placeholder=""></li>
+            <input type="text" id="txtMaker"></li>
             <li><label for="txtAmount">수량 : </label>
-            <input type="text" id="txtAmount" value="" placeholder=""></li>
-            <li>
-            	<button type="button">Save</button>
-            </li>
+            <input type="text" id="txtAmount"></li>
+            <li><button type="button" id="btnSave">Save</button></li>
 			</ul>
 		</fieldset>
 		<fieldset>
 			<legend>상품의 조회, 삭제</legend>
 			<ul>
 				<li>상품목록 : <select id="cart"><option>--목록--</option></select></li>
-				<li><button type="button">전체조회</button></li>
-				<li><button type="button">상품검색</button></li>
-				<li><button type="button">상품삭제</button></li>
-				<li><button type="button">전체삭제</button></li>
+				<li><button type="button" id='btnSelectAll'>전체조회</button></li>
+				<li><button type="button" id="btnSelect">상품검색</button></li>
+				<li><button type="button" id='btnDelete'>상품삭제</button></li>
+				<li><button type="button" id="btnDeleteAll">전체삭제</button></li>
 			</ul>
 		</fieldset>
 	</div>
+	<output id="result"></output>
 </body>
 </html>

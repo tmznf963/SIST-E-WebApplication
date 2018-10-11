@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Web SQL Database Demo</title>
+	<style type="text/css">
+		table{
+			width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+			border-collapse: collapse;
+			border: 4px dashed skyblue;
+		}
+		th{
+			background-color: skyblue;
+			color:blue;
+		}
+		thead th:nth-of-type(1){width:10%;}
+		thead th:nth-of-type(2){width:20%;}
+		thead th:nth-of-type(3){width:10%;}
+		thead th:nth-of-type(4){width:20%;}
+		thead th:nth-of-type(5){width:50%;}
+		td:nth-of-type(1){ text-align: center;}
+		td:nth-of-type(2){ text-align: center;}
+		td:nth-of-type(3){ text-align: center;}
+		td:nth-of-type(4){ text-align: center;}
+		li{
+			list-style-type: none;
+		}
+	</style>
+	<script>
+		window.addEventListener('load', setup, false);
+		var db = null;
+		var id = null;
+		function setup(){
+			//Chrome, Safari, Opera만 사용 가능
+			db = openDatabase('mydb', '1.0', 'Test DB', 10 * 1024 * 1024);
+			createTable();
+			generateId();
+			selectTable();
+			document.querySelector('#btnSave').addEventListener('click', function(){
+				var title = document.querySelector('#txtTitle');
+				var director = document.querySelector('#txtDirector');
+				var year = document.querySelector('#txtYear');
+				var synopsis = document.querySelector('#txtSynopsis');
+				db.transaction(function(tx){
+					var sql = "INSERT INTO Movie(id, title, director, year, synopsis) ";
+					sql += "VALUES(?,?,?,?,?)";
+					if(id == null) id = 0;
+					tx.executeSql(sql, [++id, title.value, director.value, parseInt(year.value), synopsis.value]);
+					title.value=''; director.value=''; year.value=''; synopsis.value='';
+					window.location.reload();
+				});
+			}, false);
+		}//setup()
+		function selectTable(){
+			var sql = "SELECT id, title, director, year, synopsis FROM Movie ORDER BY id DESC";
+			var str = "<table border='1'><thead><tr><th>번호</th><th>제목</th>" +
+								"<th>감독</th><th>상영년도</th><th>줄거리</th></tr></thead><tbody>";
+			db.transaction(function(tx){
+				tx.executeSql(sql, [], function(tx,results){
+					for(var i = 0 ; i < results.rows.length ; i++){
+						var movie = results.rows[i];
+						str += "<tr><td>" + movie.id + "</td>";
+						str += "<td>" + movie.title + "</td>";
+						str += "<td>" + movie.director + "</td>";
+						str += "<td>" + movie.year + "</td>";
+						str += "<td>" + movie.synopsis + "</td></tr>";
+					};
+					str += "</tbody></table>";
+					document.querySelector('#result').innerHTML = str;
+				});
+			});
+			
+		}
+		function generateId(){
+			db.transaction(function(tx){
+				var sql = "SELECT MAX(id) FROM Movie";
+				tx.executeSql(sql, [], function(tx, results){
+					id = results.rows[0]['MAX(id)'];
+				});
+			});
+		}
+		function createTable(){
+			db.transaction(function(tx){
+				var sql = 'CREATE TABLE IF NOT EXISTS Movie';
+				sql += '(id    INTEGER  PRIMARY KEY, ' +
+							  'title    TEXT   NOT NULL, ' +
+							  'director   TEXT   NOT NULL, ' +
+							  'year    INTEGER    NOT NULL, ' +
+							  'synopsis    TEXT)';
+				tx.executeSql(sql);
+			});
+		}
+	</script>
+</head>
+<body>
+	<h1>영화 게시판</h1>
+	<fieldset>
+		<legend>간단하게 영화 정보를 올려주세요.</legend>
+		<ul>
+			<li><label for="txtTitle">제목 : </label>
+			<input type="text" id="txtTitle" size="30"></li>
+			<li><label for="txtDirector">감독 : </label>
+			<input type="text" id="txtDirector" size="30"></li>
+			<li><label for="txtYear">상영년도 : </label>
+			<input type="text" id="txtYear" size="30"></li>
+			<li><label for="txtSynopsis">줄거리 : </label>
+			<input type="text" id="txtSynopsis" size="30"></li>
+			<li><button type="button" id="btnSave">Save</button></li>
+		</ul>
+	</fieldset>
+	<hr />
+	<output id="result"></output>
+</body>
+</html>
