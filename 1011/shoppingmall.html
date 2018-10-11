@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Shopping Mall with Storage</title>
+	<style type="text/css">
+		div {
+			width: 70%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		ul > li {
+			list-style-type:none;
+			display: inline;
+			float:left;
+			padding:10px;
+		}
+		#txtPirce,#txtAmount{width:80px;}
+		#cart{width: 200px;}
+	</style>
+</head>
+<body>
+	<div>
+		<fieldset>
+			<legend>상품 정보</legend>
+			<ul>
+            <li><label for="txtName">상품명 : </label>
+            <input type="text" id="txtName" value="" placeholder=""></li>
+            <li><label for="txtPirce">가격 : </label>
+            <input type="text" id="txtPirce" value="" placeholder=""></li>
+            <li><label for="txtMaker">제조사 : </label>
+            <input type="text" id="txtMaker" value="" placeholder=""></li>
+            <li><label for="txtAmount">수량 : </label>
+            <input type="text" id="txtAmount" value="" placeholder=""></li>
+            <li>
+            	<button type="button">Save</button>
+            </li>
+			</ul>
+		</fieldset>
+		<fieldset>
+			<legend>상품의 조회, 삭제</legend>
+			<ul>
+				<li>상품목록 : <select id="cart"><option>--목록--</option></select></li>
+				<li><button type="button">전체조회</button></li>
+				<li><button type="button">상품검색</button></li>
+				<li><button type="button">상품삭제</button></li>
+				<li><button type="button">전체삭제</button></li>
+			</ul>
+		</fieldset>
+	</div>
+</body>
+</html>

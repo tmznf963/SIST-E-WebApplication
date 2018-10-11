@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cookie를 이용한 방문자 수</title>
+	<script src="js/cookie.js"></script>
+	<script>
+		window.addEventListener('load', setup, false);
+		function setup(){
+			if(!navigator.cookieEnabled){
+				alert("현재 브라우저는 Cookie를 지원하지 않습니다."); return;
+			}
+			var count = getCookie('mycount');   //mycount=1
+			if(count){  //있다면
+				count = count.split('=')[1];
+				count = parseInt(count);
+				count++;
+				var str='';
+				for(var i = 0 ; i < 6-String(count).length ; i++){
+					str += "<img src='images/0.gif'>";
+				}
+				for(var i = 0; i<String(count).length; i++){
+					str+="<img src='images/"+String(count).charAt(i)+".gif'>"
+				}
+				document.getElementById('cnt').innerHTML = str;
+				setCookie('mycount', String(count), 1);
+			}else{   //Cookie가 없다면
+				setCookie('mycount', 0, 1);
+			}
+		}
+	</script>
+</head>
+<body>
+	방문자 수 : <span id='cnt'>0</span>
+</body>
+</html>
