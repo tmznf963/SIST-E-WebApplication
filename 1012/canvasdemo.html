@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Canvas Demo</title>
+	<script>
+		window.onload = function(){
+			var mycanvas = document.querySelector('#mycanvas');
+			var ctx = mycanvas.getContext("2d");
+			ctx.fillStyle = 'green';
+			ctx.strokeStyle = 'blue';
+			ctx.fillRect(10, 10, 200, 200);//x,y,width,hegiht
+			ctx.strokeRect(30, 30, 200, 200);//outline
+			ctx.strokeRect(40, 40, 200, 200);
+		}
+	</script>
+	<style>
+		canvas{
+			border : 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="mycanvas" width="400" height="400"></canvas>
+</body>
+</html>
