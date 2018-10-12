@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Web Worker Demo</title>
+	<script type="text/javascript">
+		window.addEventListener('load',setup,false);
+		var w=null;
+		function setup(){
+			document.querySelector('#btnSend').addEventListener('click',send,false);
+		}
+		function send(){
+			w = new Worker('worker.js');
+			num = document.getElementById('txtNum').value;
+			document.getElementById('end').innerHTML = num;
+			w.postMessage(num);
+			w.onmessage = function(evt){
+				document.getElementById('result').innerHTML = evt.data;
+			};
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txtNum">
+	<button type="button" id="btnSend">Send</button><br>
+	<p>1부터 <span id="end"></span>까지의 합은 <br>
+	<output id="result"></output> 입니다.
+	</p>
+</body>
+</html>

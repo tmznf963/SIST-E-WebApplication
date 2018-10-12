@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Destination Page</title>
+	<script>
+		window.addEventListener("message", receiveMessage, false);
+		function receiveMessage(event){
+  			if (event.origin !== "http://211.238.142.131") return;//송신주소
+  			document.getElementById('result').innerHTML = "From : " + event.origin + ' --> ' + event.data;
+		}
+	</script>
+	<style>
+		body{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<h1>Destination Page</h1>
+	<output id="result"></output>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Web Worker Demo</title>
+	<script>
+		window.addEventListener('load', setup, false);
+		var w;
+		function setup(){
+			document.getElementById('btnStart').addEventListener('click', Start, false);
+			document.getElementById('btnStop').addEventListener('click', Stop, false);
+		}
+		function Start(){
+			if(typeof(Worker) !== 'undefined'){
+				if(typeof(w) == 'undefined' || w == null) w = new Worker('demo_worker.js');
+					w.onmessage = function(evt){
+						document.getElementById('result').innerHTML = evt.data;
+					};
+			}else{
+				documet.getElementById('result').innerHTML = 'Not Support Worker';
+			}
+		}
+		function Stop(){
+			w.terminate();
+			w = null;
+		}
+	</script>
+</head>
+<body>
+	Count : <output id="result"></output>
+	<div><button type="button" id="btnStart">Start Worker</button>
+	<button type="button" id="btnStop">Stop Worker</button></div>
+</body>
+</html>

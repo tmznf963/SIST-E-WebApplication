@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Channel Messaging Demo</title>
+	<style>
+		#messageLog{
+			height:300px; width:300px;
+			overflow: scroll; float:left;
+			border:1px solid black;
+		}
+	</style>
+	<script>
+		window.addEventListener('load', setup, false);
+		var channel = null;
+		function setup(){
+			channel = new MessageChannel();
+			channel.port1.start();
+			channel.port2.start();
+			document.getElementById("btnSend").addEventListener('click', send, false);
+			document.getElementById("add").addEventListener('click', Add, false);
+		}
+		function Add(){   //수신 채널 추가
+			var newDiv = document.createElement('div');   //<div></div>
+			newDiv.id = 'messageLog';    //<div id='messageLog'></div>
+			document.getElementById('messageLogs').appendChild(newDiv);
+
+			channel.port2.addEventListener('message', function(evt){
+				newDiv.innerHTML += evt.data + '<br />';
+			},false);
+		}
+		function send(){
+			channel.port1.postMessage(document.getElementById('txtSend').value);
+		}
+	</script>
+</head>
+<body>
+	<h1>다중 채널 Demo</h1>
+	<input type="text" id="txtSend" size="40">
+	<button type="button" id="btnSend">Send</button>
+	<button type="button" id="add">Channel Add</button>
+	<div id="messageLogs"></div>
+</body>
+</html>

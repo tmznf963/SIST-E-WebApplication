@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cross Document Messaging</title>
+	<script>
+		window.addEventListener('load', setup,false);
+		function setup(){
+			//setTimeout(send, 1000);
+			setInterval(send, 1000);
+		}
+		function send(){
+			var destination = document.getElementById('destination');
+			var ORIGIN = "http://211.238.142.131/1012";
+			var now = new Date();
+			var message = now.toLocaleString();
+			destination.contentWindow.postMessage("Now is " + message, 'http://211.238.142.131/1012/destination.html');//수신주소
+		}
+	</script>
+</head>
+<body>
+	<iframe src="destination.html" width="700" height="500" id="destination">
+</body>
+</html>
