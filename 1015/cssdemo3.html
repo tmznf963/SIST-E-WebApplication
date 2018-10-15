@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>jQuery CSS Demo</title>
+	<script src="script/jquery.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('p:even').removeClass('underline');//0,2 짝수번째
+			$('p:eq(2)').removeClass('green');//0,1,2
+			$('p:nth-child(3)').addClass('green');//1,2,3
+		});
+	</script>
+	<style type="text/css">
+		.underline { text-decoration: underline; }
+		.red{ background-color: red }
+		.blue{background-color: blue}
+		.green{background-color: green}
+		.yellow{background-color: yellow}
+	</style>
+</head>
+<body>
+	<p class="red underline">RED</p>
+	<p class="blue underline">BLUE</p>
+	<p class="green underline">GREEN</p>
+	<p class="yellow underline">YELLOW</p>
+</body>
+</html>

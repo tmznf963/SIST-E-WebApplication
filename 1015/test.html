@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Test</title>
+	<script src="script/jquery.js"></script>
+	<script>
+		$(document).ready(function(){
+			var count=0;
+			$('button:first').click(function(){
+				count++;
+				if(count % 2 ==0){
+					$('body').attr('style',"background-color:red;")
+					$('button').attr('style','background-color:blue;color:red;')
+					$('button').text("빨강");
+				}else if(count % 2 == 1){
+					$('body').attr('style',"background-color:blue;")
+					$('button').attr('style','background-color:red;color:blue;')
+					$('button').text("파랑");
+				}
+			});	
+		});
+	</script>
+</head>
+<body>
+	<button type="button">빨강</button>
+</body>
+</html>

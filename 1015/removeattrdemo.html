@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>jQuery Attribute Demo</title>
+	<script src="script/jquery.js"></script>
+	<script>
+		$(document).ready(setup);
+		function setup(){
+			$('button:first').click(function(){
+				$('p').attr('style', "color:red;font-weight:900;text-decoration: overline");
+			});
+			$('button:last').click(function(){
+				$('p').removeAttr('style');
+			});
+		}
+	</script>
+</head>
+<body>
+	<p style="color:red;font-weight:900;text-decoration: overline">This is a paragraph.</p>
+	<button type="button">Style Add</button>
+	<button type="button">Style Remove</button>
+</body>
+</html>

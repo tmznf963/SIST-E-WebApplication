@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>text() Demo</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+		// window.onload = function(){
+		// 	alert(document.getElementById('result').innerHTML);
+		// };//getting
+		// window.onload = function(){
+		// 	document.getElementById('result').innerHTML = "Heeeoeoeoeo"
+		// };//setting
+		$(document).ready(function(){
+			//alert($('#result').text());//getting
+			//alert($('#result').text("Hello, JQuery"));//setting
+			//$('#result').text("<font size='7' color='red'>Hello, jQuery</font>");   //setting
+			$('#result').html("<font size='7' color='red'>Hello, jQuery</font>");   //setting
+		});
+	</script>
+</head>
+<body>
+	<output id="result">Hello, World</output>
+</body>
+</html>

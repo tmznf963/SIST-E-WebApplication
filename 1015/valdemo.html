@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>jQuery val() Demo</title>
+	<script src="script/jquery.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("input[type='submit']").click(function(){
+				if(!$("input[type='text']").val()){//value
+					$('#userid_output').html("<span style='color:red;'>아이디 값이 없습니다.</span>");
+				}
+				if(!$("input[type='password']").val()){//value
+					$('#userpasswd_output').html("<span style='color:red;'>비밀번호 값이 없습니다.</span>");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<form onsubmit='return false'>
+		ID : <input type="text" name="userid" id="userid">
+		<output id="userid_output"></output><br />
+		P/W : <input type="password" name="userpasswd" id="userpasswd">
+		<output id="userpasswd_output"></output><br />
+		<input type="submit" value="Send">
+	</form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>jQuery Property Demo</title>
+	<script src="script/jquery.js"></script>
+	<script>
+		$(document).ready(setup);
+		function setup(){
+			//$('button').attr("disabled", "disabled");
+			//$('button').prop('disabled', 'true');
+			//$("input[type='text']").attr("required", "required");
+			$('input').prop('required', 'true');
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<input type="text" id="username">
+		<button type="submit">나 버튼</button>
+	</form>
+</body>
+</html>

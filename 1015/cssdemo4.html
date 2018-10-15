@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>jQuery CSS Demo</title>
+	<script src="script/jquery.js"></script>
+	<style type="text/css">
+		div{
+			width:300px;
+			height: 300px;
+			background-color:yellow;
+		}
+		.myevent { background-color: cyan;  font-size: 2em; }
+	</style>
+	<script type="text/javascript">
+		// window.addEventListener('load',init,false);
+		// function init(){
+		// 	document.getElementById('ddd').addEventListener('mouseenter',mover,false);//mouseover
+		// 	document.getElementById('ddd').addEventListener('mouseleave',mout,false);//mouseout
+		// }
+		//document.getElementsByTagName('div')[0].addEventListener
+		// function mover(){
+		// 	document.getElementById('ddd').style.fontSize="2em";
+		// 	document.getElementById('ddd').style.backgroundColor="cyan";
+		// }
+		// function mout(){
+		// 	document.getElementById('ddd').style.fontSize="1em";
+		// 	document.getElementById('ddd').style.backgroundColor="yellow";
+		// }
+		$(document).ready(function(){
+			$('div').mouseover(function(){
+				$(this).addClass('myevent');
+			});
+			$('div').mouseout(function(){
+				$(this).removeClass('myevent');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="ddd">
+		여기에 마우스를 올려보세요.
+	</div>
+</body>
+</html>
