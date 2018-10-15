@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>jQuery CSS Demo</title>
+	<script src="script/jquery.js"></script>
+	<script>
+		$(document).ready(function(){
+			//var color = $('h1').css('color');  //getting
+			//alert(color);
+			$('h1').css({color:"red", background:"yellow", font:"2em"});   //setting
+
+			
+			$('div').click(function(){
+				$('#result').text('');
+				var mycolor = $(this).css('color');
+				var str = "이 영역의 글씨 색상은 <span style='color:";
+				str += mycolor + "'>" + mycolor + "</span> 입니다";
+				//$('#result').text(str); //Tag마저 text
+				$('#result').html(str); //Tag 실행
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>Hello, World</h1>
+	<div style = "color:red">RED</div>
+	<div style = "color:blue">BLUE</div>
+	<div style = "color:yellow">YELLOW</div>
+	<div style = "color:gray">GRAY</div>
+	<output id="result"></output>
+</body>
+</html>
