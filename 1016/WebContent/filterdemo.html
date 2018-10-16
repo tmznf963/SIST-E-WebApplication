@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Traversing Demo</title>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			$('p').filter('.grape').css('color', 'red');
+			$('p').not('.grape').css('color','blue');
+		});
+	</script>
+	</head>
+	<body>
+		<h1>eq() Demo</h1>
+		<p>Apple</p>
+		<p>Mango</p>
+		<p class='grape'>Grape</p>
+		<p>Lemon</p>
+		<p>Nuts</p>
+	</body>
+</html>
+
+
+
+

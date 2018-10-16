@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Traversing Demo</title>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			//$('#mango').siblings().css('color', 'red');
+			$('#mango').nextUntil('#lemon').css('color', 'blue');
+		});
+	</script>
+	</head>
+	<body>
+		<h1>nextUtil() Demo</h1>
+		<p>Apple</p>
+		<p id='mango'>Mango</p>
+		<p>Grape</p>
+		<p id='lemon'>Lemon</p>
+		<p>Nuts</p>
+	</body>
+</html>
+
+
+
+

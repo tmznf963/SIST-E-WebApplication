@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Traversing Demo</title>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			$('#container').find('p#first').css('background-color', 'yellow');
+		});
+	</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id='sub'>
+				<p>Sub's P</p>
+			</div>
+			<p id='first'>First</p>
+			<p>Second</p>
+		</div>
+	</body>
+</html>
+
+
+

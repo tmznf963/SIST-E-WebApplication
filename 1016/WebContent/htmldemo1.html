@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>jQuery Manipulation Demo</title>
-<script src="script/jquery.min.js"></script>
-<script>
-	$().ready(function(){
-		var firstStr = $("#first").html();
-		$("#second").html(firstStr);
-	});
-</script>
-</head>
-<body>
-	<div id="first">
-		<p>여기는 first div</p>
-	</div>
-	<div id="second">
-	<p>여기는 second div</p>
-	<p><img  src="images/yeji.jpg" width="350" height="500"></p>
-	</div>
-</body>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Manipulation Demo</title>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			$('p#second').html($('p#first').html());
+		});
+	</script>
+	</head>
+	<body>
+		<p id="first"><strong>변경 후</strong></p>
+		<p id="second">변경 전</p>
+	</body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Manipulation Demo</title>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			//alert($('#container').html());  //getting
+			$('#container > p:first').text('또 만나요!!');  //setting
+			$('#container > p:last').html('<b><u>언제 만나나요?</u></b>');
+		});
+	</script>
+	</head>
+	<body>
+		<div id="container">
+			안녕하세요.<b>jQuery</b><br />
+			Hello, World <b>JavaScript</b><br />
+			<p>See you Again?</p>
+			<p>When?</p>
+		</div>
+	</body>
+</html>

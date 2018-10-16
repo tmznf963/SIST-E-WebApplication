@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Traversing Demo</title>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			$("td:contains('Vue')").siblings().addClass('yellow').parent().find('td:eq(0)').addClass('orange');
+		});
+	</script>
+	<style type="text/css">
+		.yellow{
+			background-color: yellow;
+		}
+		.orange{
+			background-color: orange;
+		}
+	</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>jQuery</td><td>JavaScript</td>
+			</tr>
+			<tr>
+				<td>Vue</td><td>React</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+
+
+

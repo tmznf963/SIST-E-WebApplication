@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Traversing Demo</title>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			//$('p').css('border', '1px solid red');
+			//$('#container > p:first').css('border', '1px solid red');
+			//$('#container').children('p').css('border', '1px solid blue');
+			//$('#container > p').css('border', '1px solid blue');
+			$('#container').children('p:last').css('color', 'red');
+		});
+	</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id='sub'>
+				<p>Sub's P</p>
+			</div>
+			<p>First</p>
+			<p>Second</p>
+		</div>
+	</body>
+</html>
+
+
+
+

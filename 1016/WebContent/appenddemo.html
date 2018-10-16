@@ -6,35 +6,14 @@
 	<script src="script/jquery.min.js"></script>
 	<script>
 		$().ready(function(){
-			$('button').click(function(){
-				$('#result').text('');
-				var row = $('#row').val();
-				var column = $('#column').val();
-				var str = "<table border='1'>";
-				for(var i= 0 ; i < row ; i++){
-					str += "<tr>";
-					for(var j = 0 ; j < column ; j++){
-						str += "<td style='width:100px'>" + "(" + (i + 1) +  ", " + (j + 1) + ")</td>";
-					}
-					str += "</tr>";
-				}
-				str += "</table>";
-				$('#result').append(str);
-			});
+			//$('p').html('<strong>변경후</strong>');
+			//$('p').text('<strong>변경후</strong>');
+			//$('p').prepend('<strong>변경 후</strong>');
+			$('<strong>변경 후</strong>').prependTo('p');
 		});
 	</script>
 	</head>
 	<body>
-		<h1>새로운 태그 추가하기</h1>
-		Row : <input type="number" id="row"><br />
-		Column : <input type="number" id="column"><br />
-		<button type="button">Table 생성하기</button>
-		<div id="result"></div>
+		<p>변경 전</p>
 	</body>
 </html>
-
-
-
-
-
-

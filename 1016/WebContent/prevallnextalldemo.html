@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Traversing Demo</title>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			//$('#grape').prev().prev()
+			//$('#grape').prevAll().css('color', 'red');
+			//$('#grape + p').css('color', 'blue');
+			//$('#grape ~ p').css('color', 'blue');
+			$('#grape').nextAll().css('color', 'blue');
+		});
+	</script>
+	</head>
+	<body>
+		<p>Apple</p>
+		<p>Mango</p>
+		<p id="grape">Grape</p>
+		<p>Lemon</p>
+		<p>Nuts</p>
+	</body>
+</html>
+
+
+
+

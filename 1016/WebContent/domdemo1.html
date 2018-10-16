@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Manipulation Demo</title>
+	
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			$('h2').wrap('<u></u>');
+			$("<ul id='community'>").insertBefore($('a:first'));
+			$('a').clone().appendTo('ul');
+			$('body > a').remove();
+			$('ul > a').wrap('<li></li>');
+		});
+	</script>
+	</head>
+	<body>
+		<h2>Java관련 Communities</h2>
+		<a href="https://www.oracle.com">Oracle Java</a>
+		<a href="http://www.apache.org">Apache Foundation</a>
+		<a href="http://www.eclipse.org">Eclipse Foundation</a>
+		<a href="https://okky.kr/">OKJSP</a>
+	</body>
+</html>
+
+
+
+
+

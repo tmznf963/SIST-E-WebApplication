@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Traversing Demo</title>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			//$('p').eq(1).css('background-color', 'yellow');
+			//$('p:eq(1).css('background-color', 'yellow');
+			//$('p').first().css('background-color', 'yellow');
+			//$('p:first').css('background-color', 'yellow');
+			$('p').slice(2, 4).css('background-color', 'yellow');//2,3
+		});
+	</script>
+	</head>
+	<body>
+		<h1>eq() Demo</h1>
+		<p>Apple</p>
+		<p>Mango</p>
+		<p>Grape</p>
+		<p>Lemon</p>
+		<p>Nuts</p>
+	</body>
+</html>
+
+
+
+

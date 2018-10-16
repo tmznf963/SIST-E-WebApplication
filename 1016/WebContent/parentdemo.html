@@ -2,25 +2,21 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>jQuery Manipulation Demo</title>
+	<title>jQuery Traversing Demo</title>
 	<script src="script/jquery.min.js"></script>
 	<script>
 		$().ready(function(){
-			//$('#container > p:eq(1)').empty();
-			$('#container > p:eq(1)').remove();
+			$('#first').parent().css('border', '1px dashed red');
 		});
 	</script>
 	</head>
 	<body>
 		<div id='container'>
-			<p>Apple</p>
-			<p>Mango</p>
-			<p>Grape</p>
+			<p id='first'>First</p>
+			<p>Second</p>
 		</div>
 	</body>
 </html>
-
-
 
 
 

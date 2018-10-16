@@ -6,18 +6,18 @@
 	<script src="script/jquery.min.js"></script>
 	<script>
 		$().ready(function(){
-			//alert($("#container").text());//getting
-			$('#container > p:first').text("또 만나요?");//setting
-			$('#container > p:last').html("<b><u>언제 만나요?</u></b>");
+			var firstStr = $('#first').html();   //<p>여기는 first div</p>
+			$('#second').html(firstStr);
 		});
 	</script>
 	</head>
 	<body>
-		<div id="container">
-			안녕하세요.<b>jQuery</b><br />
-			Hello, World <b>JavaScript</b><br />
-			<p>See you Again?</p>
-			<p>When?</p>
+		<div id="first">
+			<p>여기는 first div</p>
+		</div>
+		<div id="second">
+			<p>여기는 second div</p>
+			<p><img src="images/jimin.png" width="200" height="200"></p>
 		</div>
 	</body>
 </html>

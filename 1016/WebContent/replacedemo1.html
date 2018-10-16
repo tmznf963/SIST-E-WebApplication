@@ -10,9 +10,10 @@
 				$(this).replaceWith("<a href='javascript:void(0)'>" + 
 						$(this).text() + "</a>");	
 			});
-			$('a').bind('click', function(){
-				alert($(this).text());
-				$(this).replaceWith("<button>" + $(this).text() + "</button>");	
+			$(a).bind('click', function(e){
+				e.preventDefault();
+				console.log($(this));
+				//$(this).replaceWith("<button>" + $(this).text() + "</button>");	
 			});
 		});
 	</script>

@@ -6,14 +6,15 @@
 	<script src="script/jquery.min.js"></script>
 	<script>
 		$().ready(function(){
-			//$('p').html('<strong>변경후</strong>');
-			//$('p').text('<strong>변경후</strong>');
-			//$('p').prepend('<strong>변경 후</strong>');
-			$('<b>asdasdasd</b>').prependTo('p');
+			$('div').prepend('<p>Hello, jQuery</p>');
+			//$('div').append('<p>See you again!!!</p>');
+			$('<p>See you again!!!</p>').appendTo('div');
 		});
 	</script>
 	</head>
 	<body>
-		<p>변경 전</p>
+		<div>
+			<p>Hello, World</p>
+		</div>
 	</body>
 </html>
