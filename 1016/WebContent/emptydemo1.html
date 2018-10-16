@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Manipulation Demo</title>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			$('button:first').click(function(){
+				$('div').empty();
+				$('div').append('<p>Sevlet/JSP</p>');
+			});
+			$('button:last').click(function(){
+				$('div').remove();
+				$('div').append('<p>Sevlet/JSP</p>');
+			});
+		});
+	</script>
+	</head>
+	<body>
+		<div id='container'>
+			<p>jQuery</p>
+			<p>AngularJS</p>
+		</div>
+		<button type='button'>empty로 영역삭제</button>
+		<button type='button'>remove로 영역삭제</button>
+	</body>
+</html>

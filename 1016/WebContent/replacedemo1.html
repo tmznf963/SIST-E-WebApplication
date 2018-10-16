@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Manipulation Demo</title>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			$('button').bind('click', function(){
+				$(this).replaceWith("<a href='javascript:void(0)'>" + 
+						$(this).text() + "</a>");	
+			});
+			$('a').bind('click', function(){
+				alert($(this).text());
+				$(this).replaceWith("<button>" + $(this).text() + "</button>");	
+			});
+		});
+	</script>
+	</head>
+	<body>
+		<button>First</button>
+		<button>Second</button>
+		<button>Third</button>
+	</body>
+</html>

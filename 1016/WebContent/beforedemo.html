@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Manipulation Demo</title>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			//$('p').before('<h1>제일 앞에 위치</h1>');
+			$('<h1>제일 앞에 위치</h1>').insertBefore('p');
+		});
+	</script>
+	</head>
+	<body>
+		<p>변경 전</p>
+	</body>
+</html>

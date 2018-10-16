@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Manipulation Demo</title>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			$('p').replaceWith("<h1>변경후</h1>");//대체
+			//$('p').remove();
+			//$('body').append('<h1>변경 후</h1>');
+		});
+	</script>
+	</head>
+	<body>
+		<p>텍스트 텍스트 텍스트</p>
+	</body>
+</html>

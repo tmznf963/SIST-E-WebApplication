@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>jQuery Manipulation Demo</title>
+	<script src="script/jquery.min.js"></script>
+	<script>
+		$().ready(function(){
+			$('#container > p:eq(1)').empty();//값만 없앤다.
+			//$('#container > p:eq(1)').remove();//Tag마저 없앤다.
+		});
+	</script>
+	</head>
+	<body>
+		<div id='container'>
+			<p>Apple</p>
+			<p>Mango</p>
+			<p>Grape</p>
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
