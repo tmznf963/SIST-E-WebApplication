@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery Event Demo</title>
+		<script src="script/jquery.1.8.3.js"></script>
+		<script>
+			$(function(){
+				$('button').toggle(
+				  function(){
+				  	$('img').attr('src','images/mango.jpg').attr('width','300px').attr('height','300px');
+				},function(){
+					$('img').attr('src','images/lemon.jpg').attr('width','300px').attr('height','300px');
+				},function(){
+					$('img').attr('src','images/grape.jpg').attr('width','300px').attr('height','300px');
+				},function(){
+					$('img').attr('src','images/apple.jpg').attr('width','300px').attr('height','300px');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<img src="images/apple.jpg" width="300px" height="300px">
+		<div><button type="button">Click Me : Change images</button></div>
+	</body>
+</html>
+
+
+
+
+

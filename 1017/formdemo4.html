@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery Form Demo</title>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$('input').val("이름을 넣어주세요.").css("color", "gray").focus(function(){
+					$(this).val("").css('color', '#000');
+				});
+				$('input').val("이름을 넣어주세요.").css("color", "gray").blur(function(){
+					if(!$(this).val()){
+						$(this).val("이름을 넣어주세요.").css("color","gray").focus(function(){
+							$(this).val("").css('color', '#000');
+						});
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		Name : <input type="text" size="40"/>
+	</body>
+</html>

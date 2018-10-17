@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery Form Demo</title>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$('select').change(function(){
+					/* var idx = document.getElementById('selFruit').selectedIndex;
+					var fruit = document.getElementById('selFruit').options[idx].value;
+					alert('가장 좋아하시는 과일은 ' + fruit + '이군요.'); */
+					var fruit = $(':selected').val();
+					alert('가장 좋아하시는 과일은 ' + fruit + '이군요.');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<select id="selFruit">가장 좋아하시는 과일은?
+			<option>--선택--</option>
+			<option value="Apple">사과</option>
+			<option value="Straw berry">딸기</option>
+			<option value="Banana">바나나</option>
+			<option value="Grape">포도</option>
+			<option value="Lemon">레몬</option>
+		</select>
+	</body>
+</html>

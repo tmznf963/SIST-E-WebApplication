@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery Form Demo</title>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$('form').submit(function(evt){
+					if(!$('#username').val()){
+						$('#username').css('border', '1px dotted red')
+						.after("<span style='color:red'>이름을 입력해 주세요.</span>");
+						return false;
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<form name='myform' action='result.html' method='GET'>
+			Name(필수) : <input type="text" id="username" name="username"/><br />
+			Age : <input type="number" name="userage"/><br />
+			Gender : <input type='radio' name='gender' value='male'>남성&nbsp;&nbsp;
+						  <input type='radio' name='gender' value='female'>여성<br />
+			Hobby : <input type="checkbox" name="hobby" value="등산" />등산<br />
+						<input type="checkbox" name="hobby" value="낚시" />낚시<br />
+						<input type="checkbox" name="hobby" value="게임" />게임<br />
+						<input type="checkbox" name="hobby" value="영화감상" />영화감상<br />
+						<input type="checkbox" name="hobby" value="독서" />독서<br />
+						<input type="checkbox" name="hobby" value="바둑" />바둑<br />
+			<input type="submit" value="Send" />
+			<input type="reset" value="Reset" />
+		</form>
+	</body>
+</html>
+
+
+
+
+

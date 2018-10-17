@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery Form Demo</title>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			$(function(){
+				var size = $(':input').size();
+				//alert(size);
+				var str = '';
+				$(':input').each(function(index){
+					str += 'Tag Name : ' + this.tagName + '\t' + 
+								'Tag Type : ' + $(this).attr('type') + '\t' +
+								'name 속성값 : ' + $(this).attr('name') + '\n';
+				});
+				alert(str);
+			});
+		</script>
+	</head>
+	<body>
+		<form>
+			<input type="text" name="txtText" />
+			<input type="number" name="txtNumber" />
+			<input type="checkbox" name="txtCheckbox" />
+			<input type="radio" name="txtRadio" />
+			<input type="date" name="txtDate" />
+			<input type="tel" name="txtTel" />
+			<input type="month" name="txtMonth" />
+			<input type="email" name="txtEmail" />
+			<input type="password" name="txtPassword" />
+			<input type="hidden" name="txtHidden" />
+			<input type="file" name="txtFile" />
+			<input type="range" name="txtRange" />
+			<textarea cols="50" rows="5" name="self"></textarea>
+			<input type="button" name="txtButton" />
+			<input type="submit" name="txtSubmit" />
+			<input type="reset" name="txtReset" />
+			<button type='button'></button>
+			<meter min="0" max="100"></meter>
+			<progress min="0" max="100"></progress>
+			<select><option>--선택--</option></select>
+		</form>
+	</body>
+</html>

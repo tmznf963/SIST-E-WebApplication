@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Form Demo jQuery</title>
+	<script src="script/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#btnSend').click(function(){
+				console.log("귀하의 성은 "+$(':checked').val()+" 이군요.");
+			});
+		});
+		// window.onload = function(){
+		// 	document.getElementById('btnSend').onclick=function(){
+		// 		var genders = document.getElementsByName('gender');
+		// 		//console.log(genders[0].checked);
+		// 		//console.log(genders[1].checked);
+		// 		var str = '귀하의 성은 ';
+		// 		if(genders[0].checked)  str += '남성이군요.';
+		// 		else str += '여성이군요';
+		// 		alert(str);
+		// 	}
+		// }
+	</script>
+</head>
+<body>
+	Gender : 
+			<input type="radio" name="gender" value="남성">남성<br />
+			<input type="radio" name="gender" value="여성">여성<br />
+			<input type="button" id="btnSend" value="전송" />
+</body>
+</html>

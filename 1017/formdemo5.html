@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery Form Demo</title>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			$(function(){
+				/* $("input[type='text']").change(function(){
+					console.log($(this).val());
+				}); */
+				$('select').change(function(){
+					$('#result').text($(this).val() + " : " + $('input').val());
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<!-- Name : <input type="text" size="40" autofocus/><br />
+		Age : <input type="number" /> -->
+		<select>
+			<option value="이름">개인</option>
+			<option value="회사명">법인</option>
+		</select><br />
+		Name : <input type="text" /><br />
+		<output id="result"></output>
+		
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery Form Demo</title>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$(':password').focus(function(){
+					$(this).after("<span>비밀번호는 필수 사항이며 반드시 6글자 이상이여야 합니다.</span>");
+					$('span').css('color', 'red');
+				}).blur(function(){
+					$('span').remove();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		Password : <input type='password' />
+	</body>
+</html>
+
+
+
+
+
