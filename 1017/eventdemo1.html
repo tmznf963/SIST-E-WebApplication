@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery Event Demo</title>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$('div').click(function(){
+					$(this).attr('style','background-color:blue;width:500px,height:500px')
+				});
+				$('button').click(function(evt){
+					$(this).attr('style','background-color:orange;font-size:2em;').text("클릭 미!!");
+					evt.stopPropagation();//button에만 이벤트 가하기.
+				})
+			});
+		</script>
+		<style type="text/css">
+			body{
+				background-color:yellow;
+			}
+			div{
+				background-color: cyan; width:400px; height: 400px;
+			}
+			button{
+				background-color: red; width: 200px; height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Event Flow</h1>
+	<div>
+		<button type="button">Click Me!!</button>
+	</div>
+	</body>
+</html>

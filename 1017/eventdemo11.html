@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery Event Demo</title>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$('#container p:first').delegate('#btn1', "click", function(){
+					alert('Hello, World');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id='container'>
+			<p>
+				<button type='button' id='btn1'>버튼1</button>
+			</p>
+			<p>
+				<button type='button' id='btn2'>버튼2</button>
+			</p>
+		</div>
+	</body>
+</html>
+
+
+
+
+
