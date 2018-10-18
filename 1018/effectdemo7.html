@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery Effect Demo</title>
+		<style type='text/css'>
+			div{
+				height:300px; overflow : hidden;
+				background-color:red; display:inline
+			}
+		</style>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$('button:first').click(function(){
+					$('div:not(:animated)').animate({'width' : '300px'}, 2000);
+				});
+				$('button:last').click(function(){
+					$('div:not(:animated)').animate({'width' : '0px'}, 2000);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Effect animate()</h1>
+		<p><button>Slide Right</button><button>Slide Left</button></p>
+		<div id='container'></div>
+	</body>
+</html>
+

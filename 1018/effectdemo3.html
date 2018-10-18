@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery Effect Demo</title>
+		<style type='text/css'>
+			div{
+				width:300px ; height:300px;
+				background-color:red; display:none
+			}
+		</style>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$('button').click(function(){
+					$('div:not(:animated)').toggle("slow");
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Effect toggle()</h1>
+		<p><button>Show/Hide</button></p>
+		<div id='container'></div>
+	</body>
+</html>

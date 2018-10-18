@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery Effect Demo</title>
+		<style type='text/css'>
+			img{  display:none   	}
+		</style>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$('button:eq(0)').click(function(){
+					$('img').fadeTo(2000, 1);
+				});
+				$('button:eq(1)').click(function(){
+					$('img').fadeTo(2000, 0.5);
+				});
+				$('button:eq(2)').click(function(){
+					$('img').fadeTo(2000, 0);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Effect fadeIn()/ fadeOut()</h1>
+		<p>
+			<button>불투명</button>
+			<button>반투명</button>
+			<button>투명</button>	
+		</p>
+		<img src="images/apple.jpg" />
+	</body>
+</html>
