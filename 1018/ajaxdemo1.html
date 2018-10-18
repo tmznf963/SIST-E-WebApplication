@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ajax Demo with jQuery</title>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$('#txtName').change(function(){
+					$.ajax({
+						type : "GET",
+						url : "sungjuk_utf8.json",
+						dataType : "text",
+						success : function(data){
+							mycallback(data);
+						},
+						error : function(err){
+							console.log(err);
+						}
+					});
+				});
+			});
+			function mycallback(data){
+				var obj = JSON.parse(data);//String --> obj
+				var str = '';
+				for(var i = 0 ; i < obj.students.length ; i++){
+					str += "<tr>";
+					var s = obj['students'][i];
+					var sum = s.kor + s.eng + s.mat +s.edp;
+					var avg = sum/4.0;
+					var grade = (avg <= 100 && avg >90) ? 'A' :
+									(avg <=90 && avg >80) ? 'B' :
+									(avg <=80 && avg >70) ? 'C' :
+									(avg <=70 && avg >60) ? 'D' : 'F';
+					str += '<td>' + s.hakbun + '</td><td>' + s.irum + '</td>' +
+					          '<td>' + s.kor + '</td><td>' + s['eng'] + '</td>' + 
+					          '<td>' + s.mat + '</td><td>' + s['edp'] + '</td>' +
+					          '<td>' + sum + '</td><td>'+avg+'</td><td>'+grade+'</td>';
+					str += "</tr>";
+				}
+				$('tbody').html(str);
+			}
+		</script>
+		<style type='text/css'>
+			table {
+				width:900px; margin-left:auto; margin-right:auto;
+			}
+			table, td, tr{
+				border-collapse: collapse;
+				border : 1px solid #000;
+			}
+			th { background-color: navy;  color:white; }
+			h1{
+				text-align: center;
+			}
+			p{
+				margin-right: auto;
+				margin-left: auto;
+			}
+
+		</style>
+	</head>
+	<body>
+		<p><input type='text' id='txtName' /></p>
+		<div>
+			<h1>쌍용고등학교 성적 데이터</h1>
+			<table border='1'>
+				<thead>
+					<tr>
+						<th>학번</th><th>이름</th><th>국어</th><th>영어</th><th>수학</th><th>전산</th><th>총점</th><th>평균</th><th>평점</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

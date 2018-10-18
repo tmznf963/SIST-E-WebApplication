@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ajax Demo</title>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			window.addEventListener('load', setup, false);
+			function setup(){
+				document.getElementById('txtName').addEventListener('change', myclick, false);
+			}
+			var obj = null;
+			function myclick(){
+				obj = new XMLHttpRequest();
+				obj.open('GET', 'sungjuk_utf8.json', true);
+				obj.onreadystatechange = mycallback;
+				obj.send(null);
+			}
+			function mycallback(){
+				if(obj.readyState == 4 && obj.status == 200){
+					document.getElementById("result").innerHTML  = obj.responseText;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p><input type="text" id="txtName"></p>
+		<p><button type='button'>Click Me!</button></p>
+		<p><output id='result'></output>
+	</body>
+</html>
