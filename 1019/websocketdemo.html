@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>WebSocket Demo</title>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			$(function(){
+				//var url = "ws://echo.websocket.org";
+				var url = "ws://211.238.142.131:9999/echo";
+				var ws = new WebSocket(url); 
+				ws.addEventListener("open", function(){
+					writeToResult("Connection is opened.");
+				}, false);
+				ws.addEventListener("error", function(){
+					writeToResult
+					("<span style='color:red'>" + "Error occurred : " + errorCode + '</span>');
+				}, false);
+				ws.addEventListener("message", function(evt){
+					writeToResult("Received Message : <span style='color:blue'>" + evt.data + '</span>');
+				}, false);
+				ws.addEventListener('close', function(){
+					writeToResult("Connection is closed.");
+				}, false);
+				$('button').bind('click', function(){
+					var msg = $('#txtMessage').val();
+					$('#txtMessage').val("");
+					ws.send(msg);
+					writeToResult("서버에 보낸 메시지 : " + msg);
+				});
+			});
+			function writeToResult(message){
+				var myp = '<p>' + message + '</p>';
+				$('#result').append(myp);
+			}
+		</script>
+	</head>
+	<body>
+		Message : <input type='text' id='txtMessage' size="50">
+		<button type='button'>Send</button>
+		<output id="result"></output>
+	</body>
+</html>

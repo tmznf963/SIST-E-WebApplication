@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>WebSocket Demo</title>
+		<script src="script/jquery.min.js"></script>
+		<script src="script/jquery.signalR-2.2.1.min.js"></script>
+		<script>
+			$(function(){
+				var connection = $.hubConnection('http://demo.dongledongle.com/');
+				var chat = connection.createHubProxy('chatHub');
+				
+				chat.on("addNewMessageToPage", function(name, message){
+					$('ul').append('<li><strong>' + name + '</strong> : ' + message + '</li>');
+				});
+				$('#usermsg').focus();
+				
+				connection.start({jsonp:true}).done(function(){
+					$("input[type='button']").bind('click', function(){
+						chat.invoke("send", $('#userid').val(), $('#usermsg').val());
+						$('#usermsg').val("");
+						$('#usermsg').focus();
+					});
+				});
+			});
+		</script>
+		<style type='text/css'>
+			ul { list-style-type :none}
+		</style>
+	</head>
+	<body>
+		<fieldset>
+			<legend>아이디를 넣으시고 메시지를 입력 후 전송 버튼을 눌러주세요.</legend>
+			<label>User ID : </label>
+			<input type="text" id='userid' size="30"/><br />
+			<label>Message : </label>
+			<input type="text" id="usermsg" size="60" />
+			<input type="button" value="전송" />
+		</fieldset>
+		<ul id='result'></ul>
+	</body>
+</html>
+
+

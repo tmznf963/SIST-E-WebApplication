@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>WebSocket Demo</title>
+		<script src="script/jquery.min.js"></script>
+		<script>
+			var ws = null;
+			$(function(){
+				ws = new WebSocket("ws://211.238.142.147:9999/echo");
+				ws.addEventListener('open',function(){
+					$('p').html("<span style='color:skyblue'>Connection is opened.</span>");
+					mysend("&nbsp;","<em>새로운 Client 입장하셨습니다.</em>");
+				});
+				ws.addEventListener('error',function(evt){
+					$('p').html("<span style='color:red'>Error"+evt.data+"</span>");
+				});
+				ws.addEventListener('message',function(evt){
+					$('ul').append("<li>"+evt.data+"</li>");
+				});
+				ws.addEventListener('close',function(){
+					$('p').html("<span style='color:orange'>Connection is closed.</span>");
+				});
+				$('input[type="button"]').click(function(){
+					if(!$('#userid').val()){
+						alert("대화명을 입력해주세요.");
+						$('#userid').focus();
+						return false;
+					}else{
+						mysend($('#userid').val(),$('#usermsg').val());
+					}
+				});
+				$('#usermsg').keyup(function(evt){
+					if(evt.keyCode ==13){
+						if(!$('#userid').val()){
+							alert("대화명을 입력해주세요.");
+							$('#userid').focus();
+							return false;
+						}else{
+							mysend($('#userid').val(),$('#usermsg').val());
+						}
+					}
+				});
+				function mysend(user,msg){
+					ws.send("<strong>"+user+"</strong> : "+msg);
+					$('#usermsg').val("");
+				};
+			});
+		</script>
+		<style type='text/css'>
+			ul { list-style-type :none}
+		</style>
+	</head>
+	<body>
+		<fieldset>
+			<legend>아이디를 넣으시고 메시지를 입력 후 전송 버튼을 눌러주세요.</legend>
+			<label>User ID : </label>
+			<input type="text" id='userid' size="30"/><br />
+			<label>Message : </label>
+			<input type="text" id="usermsg" size="60" />
+			<input type="button" value="전송" />
+		</fieldset>
+		<p></p>
+		<ul id='result'></ul>
+	</body>
+</html>
+
+
