@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>indexedDB Friday Example</title>
+	<link rel="stylesheet" type="text/css" href="css/movie.css">
+</head>
+<body>
+	<h1>영화 게시판</h1>
+	<fieldset>
+		<legend>간단하게 영화 정보를 올려주세요.</legend>
+		<ul>
+			<li><label for="txtTitle">제목 : </label>
+			<input type="text" id="txtTitle" size="30"></li>
+			<li><label for="txtDirector">감독 : </label>
+			<input type="text" id="txtDirector" size="30"></li>
+			<li><label for="txtYear">상영년도 : </label>
+			<input type="text" id="txtYear" size="30"></li>
+			<li><label for="txtSynopsis">줄거리 : </label>
+			<input type="text" id="txtSynopsis" size="30"></li>
+			<li><button type="button" id="btnSave">Save</button></li>
+		</ul>
+	</fieldset>
+	<hr />
+	<output id="result"></output>
+	<script src="script/movie.js"></script>
+</body>
+</html>
